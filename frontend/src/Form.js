@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import {
   Box,
+  Button,
   TextField,
 } from "@mui/material";
 
@@ -162,14 +163,14 @@ export default function Form() {
             </TextField>
           </div>
 
-          <button
+          <Button
             onClick={handleSubmit}
             color="primary"
             variant="contained"
             style={{ marginTop: "45px", marginBottom: "20px" }}
           >
             SUBMIT
-          </button>
+          </Button>
         </Box>
       </form>
 
