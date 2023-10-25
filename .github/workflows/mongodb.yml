@@ -18,4 +18,4 @@ jobs:
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
 
-    - run: curl http://localhost:27017
+    - run: curl http://127.0.0.1:27017
