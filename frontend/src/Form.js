@@ -53,18 +53,13 @@ export default function Form() {
   };
 
   useEffect(() => {
-    setFiltered(
-      suppliers
-        .filter((item) => {
+    setFiltered(suppliers.filter((item) => {
           return item.supplier === formData.supplier;
         })
         .flatMap((s) => {
           return s.desc;
         })
-    );
-    
-
-  }, [formData.supplier]);
+    )},[formData.supplier]);
 
   return (
     <div>
