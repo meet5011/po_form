@@ -37,21 +37,3 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder:  ./frontend/build # The folder the action should deploy.
-  
-  build-node: 
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./backend
-    strategy:
-      matrix:
-        node-version: [18.x]
-     steps:
-    - uses: actions/checkout@v3
-      with: 
-        persist-credentials: false
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - run: npm i
-    - run: npm start
