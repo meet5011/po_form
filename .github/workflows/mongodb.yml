@@ -18,4 +18,4 @@ jobs:
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
 
-    - run: curl http://127.0.0.1:27017/PO
+    - run: curl mongodb+srv://ermeet13:pass123@cluster03.xnikdir.mongodb.net/PO
