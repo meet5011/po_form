@@ -59,7 +59,7 @@ export default function Form() {
         .flatMap((s) => {
           return s.desc;
         })
-    )},[formData.supplier]);
+    )},[formData.supplier]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
