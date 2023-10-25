@@ -2,6 +2,9 @@ on: push
 jobs:
   build-node :
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend
     container: node:18
     steps:
       - run: node --version
