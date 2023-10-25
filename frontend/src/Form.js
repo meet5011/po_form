@@ -26,7 +26,7 @@ export default function Form() {
     fetch("http://localhost:3001/suppliers")
       .then((res) => res.json())
       .then((data) => setSuppliers(data));
-  });
+  },[]);            // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;

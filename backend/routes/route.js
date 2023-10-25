@@ -13,7 +13,7 @@ router.get('/suppliers',async(req,res)=>{
      try {
       const orders =  await db.collection("purchase_orders").find().toArray();
       //console.log(suppliers);
-      console.log(orders.length);
+    
       res.status(200).json(orders);
      } catch (error) {
         console.log(error);
