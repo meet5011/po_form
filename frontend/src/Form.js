@@ -26,7 +26,7 @@ export default function Form() {
     fetch("http://localhost:3001/suppliers")
       .then((res) => res.json())
       .then((data) => setSuppliers(data));
-  }, []);
+  });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -39,9 +39,9 @@ export default function Form() {
   };
   const handlepurchaseOrdersChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-
-    //console.log(formData);
+    setFormData({ ...formData, [name]: value,poNumber:suppliers.filter((s)=>{
+      return s.supplier === formData.supplier
+     })[0].poNumber});
   };
 
   const handleSubmit = (event) => {
@@ -49,9 +49,7 @@ export default function Form() {
     if (!Object.values(formData).includes("")) {
       setSubmit(true);
     }
-    setFormData({...formData,poNumber:suppliers.filter((s)=>{
-     return s.supplier === formData.supplier
-    })[0].poNumber});
+   
   };
 
   useEffect(() => {
@@ -64,7 +62,8 @@ export default function Form() {
           return s.desc;
         })
     );
-    setSubmit(false);
+    
+
   }, [formData.supplier]);
 
   return (
@@ -179,9 +178,9 @@ export default function Form() {
         </Box>
       </form>
 
-      {submit && (
-        <table style={{ width: "35%", margin: "auto" }}>
-          <tr style={{marginBottom:"30px",border:"2px solid black"}}>
+      {submit && 
+      <table style={{ width: "35%", margin: "auto" }}>
+          <tr>
            <th>NAME</th>
            <th>Start time</th>
            <th>End time</th>
@@ -204,7 +203,7 @@ export default function Form() {
           </tr>
           
         </table>
-      )}
+      }
     </div>
   );
 }
