@@ -6,10 +6,13 @@ on:
 jobs:
   build-node :
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./backend
+    container: node:18
+    # defaults:
+    #   run:
+    #     working-directory: ./backend
     steps:
+      - run: node  --version
+      - run: npm --version
       - uses: actions/checkout@v3
       - run: npm install
       - run: node index.js
