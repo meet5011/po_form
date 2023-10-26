@@ -7,9 +7,9 @@ jobs:
   build-node :
     runs-on: ubuntu-latest
     container: node:18
-    # defaults:
-    #   run:
-    #     working-directory: ./backend
+    defaults:
+      run:
+        working-directory: ./backend
     steps:
       - run: node  --version
       - run: npm --version
