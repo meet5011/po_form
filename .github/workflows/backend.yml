@@ -11,9 +11,7 @@ jobs:
       run:
         working-directory: ./backend
     steps:
-      - run: node  --version
-      - run: npm --version
       - uses: actions/checkout@v3
       - run: npm install
-      - run: node index.js
+      - run: cd backend node index.js
 
